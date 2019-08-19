@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="row">
+        <div class="col-5 mx-auto">
+            <form action="#" [formGroup]="formDangNhap" (ngSubmit)="DangNhap()">
+                <h4 class="display-4">Đăng Nhập</h4>
+                <div class="form-group">
+                    <label for="taiKhoan">Tài Khoản</label>
+                    <input type="text" id="taiKhoan" class="form-control" formControlName="TaiKhoan">
+                    <div *ngIf="formDangNhap.get('TaiKhoan').invalid && formDangNhap.get('TaiKhoan').touched">
+                        <div *ngIf="formDangNhap.get('TaiKhoan').errors['required']" class="alert alert-danger">
+                            Vui lòng nhập tài khoản
+                        </div>
+                        <div *ngIf="formDangNhap.get('TaiKhoan').errors['pattern']" class="alert alert-danger">
+                            Tài khoản không được chứa các ký tự đặc biệt
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="matKhau">Mật khẩu</label>
+                    <input type="text" id="matKhau" class="form-control" formControlName="MatKhau">
+                    <div *ngIf="formDangNhap.get('MatKhau').invalid && formDangNhap.get('MatKhau').touched">
+                        <div class="alert alert-danger" *ngIf="formDangNhap.get('MatKhau').errors['required']">
+                            Vui lòng nhập mật khẩu
+                        </div>
+                        <div class="text-danger" *ngIf="formDangNhap.get('MatKhau').errors['pattern']">
+                            Must be atleast 8 characters! <br>
+                            Must contain atleast 1 number!<br>
+                            Must contain atleast 1 in Capital Case!<br>
+                            Must contain atleast 1 Letter in small Case!<br>
+                            Must contain atleast 1 Special Character!
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-success" type="submit">Đăng nhập</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
