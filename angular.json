@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "NMPMovie": {
+    "BaitapchiaLayout": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/NMPMovie",
+            "outputPath": "dist/BaitapchiaLayout",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -28,9 +28,14 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/popper.js/dist/umd/popper.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -67,18 +72,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "NMPMovie:build"
+            "browserTarget": "BaitapchiaLayout:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "NMPMovie:build:production"
+              "browserTarget": "BaitapchiaLayout:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "NMPMovie:build"
+            "browserTarget": "BaitapchiaLayout:build"
           }
         },
         "test": {
@@ -115,15 +120,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "NMPMovie:serve"
+            "devServerTarget": "BaitapchiaLayout:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "NMPMovie:serve:production"
+              "devServerTarget": "BaitapchiaLayout:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "NMPMovie"
+  "defaultProject": "BaitapchiaLayout"
 }
